@@ -1,11 +1,40 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
+import DraggableList from "./lib/DraggableList";
 
-import { DraggableList } from "r-draggable-list";
+const list = [
+  {
+    label: "Furia",
+    sort: 0,
+  },
+  {
+    label: "Mibr",
+    sort: 1,
+  },
+  {
+    label: "Imperial",
+    sort: 2,
+  },
+  {
+    label: 'Pain',
+    sort: 3
+  }, 
+  {
+    label: "Red Canids",
+    sort: 4,
+  },
+  {
+    label: "Oddik",
+    sort: 5,
+  },
+  {
+    label: "Case",
+    sort: 6,
+  },
+];
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
-    {/* <h1>Hello World</h1> */}
-    <DraggableList />
+    <DraggableList list={list.map((l) => l.label)} />
   </StrictMode>
 );
